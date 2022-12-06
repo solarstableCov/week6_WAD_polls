@@ -2411,3 +2411,15 @@ datetime.datetime(2022, 12, 6, 20, 28, 16, 58809, tzinfo=datetime.timezone.utc)
 >>> Question.objects.all()
 <QuerySet [<Question: Question object (1)>]>
 >>> 
+now exiting InteractiveConsole...
+(polls_venv) resume@ubuntu:~/week6_WAD_polls/mysite$ python manage.py shell
+Python 3.8.10 (default, Jun 22 2022, 20:18:18) 
+[GCC 9.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from polls.models import Choice, Question
+>>> Question.objects.all()
+<QuerySet [<Question: What's up?>]>
+>>> from django.utils import timezone
+>>> q = Question(question_text="What's new?", pub_date=timezone.now())
+>>> q.save()
