@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title> {{title}} </title>
+</head>
+
+<body>
+
+<!--{{ question }}-->
+<h1>This is a heading</h1>
+<h1>{{ question.question_text }}</h1>
+<p>This is a paragraph</p>
+<ul>
+{% for choice in question.choice_set.all %}
+    <li>{{ choice.choice_text }}</li>
+{% endfor %}
+</ul>
+
+<a href="https://www.w3schools.com">Visit W3Schools</a>
+
+</body>
+</html>
